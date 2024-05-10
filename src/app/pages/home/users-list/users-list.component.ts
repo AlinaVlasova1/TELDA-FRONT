@@ -30,7 +30,7 @@ export class UsersListComponent implements OnInit {
       map((data: IUser[]) => {
         data.forEach((el) =>
           el.createdAt = new Date(el.createdAt)
-            .toLocaleDateString('ru-RU', new DateTimeOptions()) )
+            .toLocaleString('ru-RU', new DateTimeOptions()) )
         return data;
       })
     ).subscribe((data) => {

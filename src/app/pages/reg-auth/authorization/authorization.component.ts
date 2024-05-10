@@ -28,13 +28,13 @@ export class AuthorizationComponent implements OnInit {
       password: this.password
     }
 
-     this.authService.authorizationUser(userObj).subscribe((data) => {
-       this.authUser = data;
-       if (userObj.login == this.authUser.login){
+     this.authService.authorizationUser(userObj).subscribe({
+       next: (data) => {
+         this.authUser = data;
          this.router.navigate(['home'])
            .then(r => localStorage.setItem('user-private-token', this.authUser.token));
-       }
-       else {
+       },
+       error: (data) => {
          this.messageService.add({severity: 'error', summary: 'Неверный логин или пароль'});
        }
     });
