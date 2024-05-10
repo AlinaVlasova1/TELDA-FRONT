@@ -3,19 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'authorization',
-    loadChildren: () => import('./pages/authorization/authorization.module').then(m => m.AuthorizationModule)
-  },
-  {
-    path: 'registration',
-    loadChildren: () => import('./pages/registration/registration.module').then(m => m.RegistrationModule)
+    path: 'reg-auth',
+    loadChildren: () => import('./pages/reg-auth/reg-auth.module').then(m => m.RegAuthModule)
   },
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
   { path: '**',
-    redirectTo: 'authorization'
+    redirectTo: 'reg-auth'
   }
 ];
 

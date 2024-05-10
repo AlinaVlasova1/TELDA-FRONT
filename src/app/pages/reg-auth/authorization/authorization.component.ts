@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IAuthUser, IUser} from "../../model/user";
-import {AuthorizationService} from "../../services/authorization/authorization.service";
+import {IAuthUser, IUser} from "../../../model/user";
+import {AuthorizationService} from "../../../services/authorization/authorization.service";
 import {Router} from "@angular/router";
 import {MessageService} from "primeng/api";
 
@@ -35,14 +35,10 @@ export class AuthorizationComponent implements OnInit {
            .then(r => localStorage.setItem('user-private-token', this.authUser.token));
        }
        else {
-         this.messageService.add({severity: 'error', summary: 'Пользователь не найден в базе'});
+         this.messageService.add({severity: 'error', summary: 'Неверный логин или пароль'});
        }
     });
 
-  }
-
-  navigateRegistration(ev: Event) {
-    this.router.navigate(['registration']).then();
   }
 
 }

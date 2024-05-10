@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RegistrationService} from "../../services/registration/registration.service";
-import {IRegUser} from "../../model/user";
+import {RegistrationService} from "../../../services/registration/registration.service";
+import {IRegUser} from "../../../model/user";
 import {MessageService} from "primeng/api";
 import {Router} from "@angular/router";
 
