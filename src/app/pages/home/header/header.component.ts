@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {UserService} from "../../../services/user/user.service";
 
@@ -10,7 +10,8 @@ import {UserService} from "../../../services/user/user.service";
 export class HeaderComponent implements OnInit {
 
   items: MenuItem[];
-  userLogin: string;
+  @Output() public userLogin: EventEmitter<string> = new EventEmitter();
+  userName: string;
   constructor(private userService: UserService) { }
 
 
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit {
     ]
 
     this.userService.getUser().subscribe((data) => {
-      this.userLogin = data.login
+      this.userLogin.emit(data.login);
+      this.userName = data.userName;
     })
   }
 

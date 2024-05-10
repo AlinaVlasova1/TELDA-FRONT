@@ -36,11 +36,6 @@
              [ngClass]="{'input-error': !passwordRepeat}"
              [(ngModel)]="passwordRepeat"/>
     </div>
-    <p-checkbox class="mt-4  mx-5"
-                (onChange)="plusUser()"
-                label="Зарегестрировать еще одного пользователя"
-                name="groupname" [binary]="true"
-                [(ngModel)]="selectedValue"></p-checkbox>
     <div class="mt-5 d-flex justify-content-center">
       <button [disabled]="!login || !password"
               (click)="registrationUser($event)" type="button" class="btn btn-success">Зарегестрироваться</button>

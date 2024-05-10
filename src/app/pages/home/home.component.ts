@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  currentUser: string;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  userLoginProvide(ev: string): void {
+    this.currentUser = ev;
   }
 
 }

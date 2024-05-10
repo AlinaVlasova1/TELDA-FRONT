@@ -31,4 +31,15 @@ export class UserService {
             .set('ApiKey', `${token}`)
       })
   }
+
+  deleteUser(id: string): Observable<any> {
+    const token = localStorage.getItem('user-private-token');
+    return  this.http.delete<IUser[]>(
+      `${ApiOptions.baseApiUrl}api/user/${id}`,
+      { headers:
+          new HttpHeaders()
+            .set('Authorization', `${ApiOptions.authHeaderValue}`)
+            .set('ApiKey', `${token}`)
+      })
+  }
 }

@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-users-list></app-users-list>
+<app-header (userLogin)="userLoginProvide($event)"></app-header>
+<app-users-list [currentUser]="currentUser"></app-users-list>

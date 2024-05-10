@@ -8,7 +8,6 @@ import {ApiOptions} from "../api-options";
   providedIn: 'root'
 })
 export class AuthorizationService {
-  token = 'Basic MTExNzU2MjA6NjAtZGF5ZnJlZXRyaWFs';
   constructor(private http: HttpClient) { }
 
   authorizationUser(userObj: IAuthUser): Observable<IUser> {

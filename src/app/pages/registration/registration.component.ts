@@ -49,11 +49,4 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  plusUser(): void {
-    if (this.selectedValue == true){
-      this.users.push(1);
-      this.selectedValue = false;
-    }
-  }
-
 }
