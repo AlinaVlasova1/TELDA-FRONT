@@ -29,6 +29,9 @@ import {MessageService} from "primeng/api";
     MessagesModule,
     HttpClientModule
   ],
+  exports: [
+    AuthorizationComponent
+  ],
   providers: [MessageService]
 })
 export class AuthorizationModule {

@@ -28,6 +28,9 @@ import {HttpClientModule} from "@angular/common/http";
     MessagesModule,
     HttpClientModule
   ],
+  exports: [
+    RegistrationComponent
+  ],
   providers: [MessageService]
 })
 export class RegistrationModule {

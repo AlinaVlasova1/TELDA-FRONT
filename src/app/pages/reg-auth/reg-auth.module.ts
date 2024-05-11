@@ -14,6 +14,8 @@ import {CheckboxModule} from "primeng/checkbox";
 import {MessagesModule} from "primeng/messages";
 import {HttpClientModule} from "@angular/common/http";
 import {MessageService} from "primeng/api";
+import {AuthorizationModule} from "./authorization/authorization.module";
+import {RegistrationModule} from "./registration/registration.module";
 
 
 @NgModule({
@@ -31,9 +33,10 @@ import {MessageService} from "primeng/api";
     TabViewModule,
     InputTextModule,
     CheckboxModule,
-    ToastModule,
     MessagesModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthorizationModule,
+    RegistrationModule
   ],
   providers: [MessageService]
 })
