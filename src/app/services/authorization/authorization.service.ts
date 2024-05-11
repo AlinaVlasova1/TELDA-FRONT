@@ -12,7 +12,6 @@ export class AuthorizationService {
   }
 
   authorizationUser(userObj: IAuthUser): Observable<IUser> {
-    return this.http.post<IUser>(`${ApiOptions.baseApiUrl}api/sign-in/`, userObj,
-      {headers: {'Authorization': `${ApiOptions.authHeaderValue}`}});
+    return this.http.post<IUser>(`${ApiOptions.baseApiUrl}api/sign-in/`, userObj);
   }
 }

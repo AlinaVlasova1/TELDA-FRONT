@@ -13,8 +13,7 @@ export class RegistrationService {
   }
 
   postUser(userObj: IRegUser): Observable<any> {
-    return this.http.post(`${ApiOptions.baseApiUrl}api/sign-up/`, userObj,
-      {headers: {'Authorization': `${ApiOptions.authHeaderValue}`}})
+    return this.http.post(`${ApiOptions.baseApiUrl}api/sign-up/`, userObj)
   }
 
 }

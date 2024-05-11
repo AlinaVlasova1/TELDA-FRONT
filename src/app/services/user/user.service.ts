@@ -18,7 +18,6 @@ export class UserService {
       {
         headers:
           new HttpHeaders()
-            .set('Authorization', `${ApiOptions.authHeaderValue}`)
             .set('ApiKey', `${localStorage.getItem('user-private-token')}`)
       })
   }
@@ -30,7 +29,6 @@ export class UserService {
       {
         headers:
           new HttpHeaders()
-            .set('Authorization', `${ApiOptions.authHeaderValue}`)
             .set('ApiKey', `${token}`)
       })
   }
@@ -42,7 +40,6 @@ export class UserService {
       {
         headers:
           new HttpHeaders()
-            .set('Authorization', `${ApiOptions.authHeaderValue}`)
             .set('ApiKey', `${token}`)
       })
   }
