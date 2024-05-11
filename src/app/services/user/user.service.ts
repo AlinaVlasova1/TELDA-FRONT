@@ -18,29 +18,31 @@ export class UserService {
       {
         headers:
           new HttpHeaders()
-            .set('ApiKey', `${localStorage.getItem('user-private-token')}`)
+            .set('ApiKey', `${this.getToken()}`)
       })
   }
 
   getAllUsers(): Observable<IUser[]> {
-    const token = localStorage.getItem('user-private-token');
     return this.http.get<IUser[]>(
       `${ApiOptions.baseApiUrl}api/users/`,
       {
         headers:
           new HttpHeaders()
-            .set('ApiKey', `${token}`)
+            .set('ApiKey', `${this.getToken()}`)
       })
   }
 
   deleteUser(id: string): Observable<any> {
-    const token = localStorage.getItem('user-private-token');
     return this.http.delete<IUser[]>(
       `${ApiOptions.baseApiUrl}api/user/${id}`,
       {
         headers:
           new HttpHeaders()
-            .set('ApiKey', `${token}`)
+            .set('ApiKey', `${this.getToken()}`)
       })
+  }
+
+  getToken(): string {
+    return localStorage.getItem('user-private-token');
   }
 }
