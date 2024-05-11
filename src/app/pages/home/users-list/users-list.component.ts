@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IUser} from "../../../model/user";
 import {UserService} from "../../../services/user/user.service";
-import {map, switchMap} from "rxjs";
+import {map} from "rxjs";
 import {DateTimeOptions} from "../../../services/date-time-options";
 
 @Component({
@@ -11,9 +11,10 @@ import {DateTimeOptions} from "../../../services/date-time-options";
 })
 export class UsersListComponent implements OnInit {
   users: IUser[] = [];
-  @Input() currentUser: string ;
+  @Input() currentUser: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit(): void {
     this.updateUsers();
@@ -30,7 +31,7 @@ export class UsersListComponent implements OnInit {
       map((data: IUser[]) => {
         data.forEach((el) =>
           el.createdAt = new Date(el.createdAt)
-            .toLocaleString('ru-RU', new DateTimeOptions()) )
+            .toLocaleString('ru-RU', new DateTimeOptions()))
         return data;
       })
     ).subscribe((data) => {

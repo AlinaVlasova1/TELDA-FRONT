@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { RegistrationRoutingModule } from './registration-routing.module';
-import { RegistrationComponent } from './registration.component';
+import {RegistrationRoutingModule} from './registration-routing.module';
+import {RegistrationComponent} from './registration.component';
 import {FormsModule} from "@angular/forms";
 import {MessagesModule} from "primeng/messages";
 import {ToastModule} from "primeng/toast";
@@ -17,17 +17,18 @@ import {HttpClientModule} from "@angular/common/http";
   declarations: [
     RegistrationComponent
   ],
-    imports: [
-      CommonModule,
-      RegistrationRoutingModule,
-      FormsModule,
-      TabViewModule,
-      InputTextModule,
-      CheckboxModule,
-      ToastModule,
-      MessagesModule,
-      HttpClientModule
-    ],
+  imports: [
+    CommonModule,
+    RegistrationRoutingModule,
+    FormsModule,
+    TabViewModule,
+    InputTextModule,
+    CheckboxModule,
+    ToastModule,
+    MessagesModule,
+    HttpClientModule
+  ],
   providers: [MessageService]
 })
-export class RegistrationModule { }
+export class RegistrationModule {
+}

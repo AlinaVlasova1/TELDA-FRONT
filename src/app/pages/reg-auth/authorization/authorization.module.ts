@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AuthorizationRoutingModule } from './authorization-routing.module';
-import { AuthorizationComponent } from './authorization.component';
+import {AuthorizationRoutingModule} from './authorization-routing.module';
+import {AuthorizationComponent} from './authorization.component';
 import {FormsModule} from "@angular/forms";
 import {TabViewModule} from "primeng/tabview";
 import {InputTextModule} from "primeng/inputtext";
@@ -31,4 +31,5 @@ import {MessageService} from "primeng/api";
   ],
   providers: [MessageService]
 })
-export class AuthorizationModule { }
+export class AuthorizationModule {
+}

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { RegAuthRoutingModule } from './reg-auth-routing.module';
-import { RegAuthComponent } from './reg-auth.component';
+import {RegAuthRoutingModule} from './reg-auth-routing.module';
+import {RegAuthComponent} from './reg-auth.component';
 import {TabViewModule} from "primeng/tabview";
 import {ToastModule} from "primeng/toast";
 import {RegistrationComponent} from "./registration/registration.component";
@@ -18,9 +18,7 @@ import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [
-    RegAuthComponent,
-    RegistrationComponent,
-    AuthorizationComponent
+    RegAuthComponent
   ],
   imports: [
     CommonModule,
@@ -39,4 +37,5 @@ import {MessageService} from "primeng/api";
   ],
   providers: [MessageService]
 })
-export class RegAuthModule { }
+export class RegAuthModule {
+}

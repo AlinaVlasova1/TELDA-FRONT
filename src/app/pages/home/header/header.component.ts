@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {UserService} from "../../../services/user/user.service";
 
@@ -12,14 +12,16 @@ export class HeaderComponent implements OnInit {
   items: MenuItem[];
   @Output() public userLogin: EventEmitter<string> = new EventEmitter();
   userName: string;
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService) {
+  }
 
 
   ngOnInit(): void {
     this.items = [
       {
         label: 'Выйти',
-        routerLink:['authorization']
+        routerLink: ['authorization']
       }
     ]
 

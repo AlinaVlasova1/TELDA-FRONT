@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {IUser} from "../../model/user";
@@ -9,12 +9,14 @@ import {ApiOptions} from "../api-options";
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getUser(): Observable<IUser> {
     return this.http.get<IUser>(
       `${ApiOptions.baseApiUrl}api/user/`,
-      { headers:
+      {
+        headers:
           new HttpHeaders()
             .set('Authorization', `${ApiOptions.authHeaderValue}`)
             .set('ApiKey', `${localStorage.getItem('user-private-token')}`)
@@ -25,7 +27,8 @@ export class UserService {
     const token = localStorage.getItem('user-private-token');
     return this.http.get<IUser[]>(
       `${ApiOptions.baseApiUrl}api/users/`,
-      { headers:
+      {
+        headers:
           new HttpHeaders()
             .set('Authorization', `${ApiOptions.authHeaderValue}`)
             .set('ApiKey', `${token}`)
@@ -34,9 +37,10 @@ export class UserService {
 
   deleteUser(id: string): Observable<any> {
     const token = localStorage.getItem('user-private-token');
-    return  this.http.delete<IUser[]>(
+    return this.http.delete<IUser[]>(
       `${ApiOptions.baseApiUrl}api/user/${id}`,
-      { headers:
+      {
+        headers:
           new HttpHeaders()
             .set('Authorization', `${ApiOptions.authHeaderValue}`)
             .set('ApiKey', `${token}`)

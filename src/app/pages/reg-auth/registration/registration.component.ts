@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RegistrationService} from "../../../services/registration/registration.service";
 import {IRegUser} from "../../../model/user";
 import {MessageService} from "primeng/api";
@@ -17,9 +17,11 @@ export class RegistrationComponent implements OnInit {
   passwordRepeat: string;
   selectedValue: boolean = false;
   users = [1];
+
   constructor(private regService: RegistrationService,
               private messageService: MessageService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
   }
@@ -37,7 +39,7 @@ export class RegistrationComponent implements OnInit {
     }
     this.regService.postUser(userObj).subscribe({
       next: data => {
-        this.messageService.add({severity:'success', summary:'Регистрация прошла успешно'});
+        this.messageService.add({severity: 'success', summary: 'Регистрация прошла успешно'});
         this.router.navigate(['authorization']).then();
         return true;
       },

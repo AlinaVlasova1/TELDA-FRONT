@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IRegUser} from "../../model/user";
 import {Observable} from "rxjs";
@@ -14,7 +14,7 @@ export class RegistrationService {
 
   postUser(userObj: IRegUser): Observable<any> {
     return this.http.post(`${ApiOptions.baseApiUrl}api/sign-up/`, userObj,
-      {headers: { 'Authorization': `${ApiOptions.authHeaderValue}` }})
+      {headers: {'Authorization': `${ApiOptions.authHeaderValue}`}})
   }
 
 }

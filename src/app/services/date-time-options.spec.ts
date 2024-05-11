@@ -1,4 +1,4 @@
-import { DateTimeOptions } from './date-time-options';
+import {DateTimeOptions} from './date-time-options';
 
 describe('DateTimeOptions', () => {
   it('should create an instance', () => {
